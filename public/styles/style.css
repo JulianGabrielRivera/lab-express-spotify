@@ -1,0 +1,60 @@
+.artist_name {
+  display: flex;
+
+  justify-content: center;
+}
+.container {
+  width: 100%;
+  text-align: center;
+  background-color: beige;
+}
+
+.container img {
+  width: 400px;
+  height: 400px;
+}
+.container h2 {
+  font-weight: bold;
+}
+.container a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.container button {
+  background-color: white;
+  border-radius: 10px;
+}
+.container button:hover {
+  background-color: gray;
+}
+.albums {
+  display: flex;
+  flex-wrap: wrap;
+}
+.album_container {
+  text-align: center;
+  background-color: beige;
+}
+.album_container a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.album_container img {
+  width: 400px;
+  height: 400px;
+}
+.album_container button {
+  background-color: white;
+  border-radius: 10px;
+}
+.album_container button:hover {
+  background-color: gray;
+}
+.tracks {
+  display: flex;
+  flex-wrap: wrap;
+}

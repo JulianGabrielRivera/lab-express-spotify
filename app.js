@@ -21,7 +21,9 @@ const spotifyApi = new SpotifyWebApi({
 // Retrieve an access token
 spotifyApi
   .clientCredentialsGrant()
-  .then((data) => spotifyApi.setAccessToken(data.body['access_token']))
+  .then((data) => {
+    spotifyApi.setAccessToken(data.body['access_token']);
+  })
   .catch((error) =>
     console.log('Something went wrong when retrieving an access token', error)
   );
@@ -40,7 +42,9 @@ app.get('/artist-search', (req, res) => {
       // console.log('The received data from the API: ', data.body.artists);
       // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
       const artist = data.body.artists.items;
-      console.log(artist);
+      console.log(data.body.artists.items[0].images);
+      // console.log(data);
+
       res.render('artist-search-results', { artist });
     })
     .catch((err) =>
@@ -86,7 +90,7 @@ app.get('/tracks/:albumId', (req, res, next) => {
     );
 });
 
-app.listen(3000, () =>
+app.listen(5000, () =>
   console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊')
 );
 

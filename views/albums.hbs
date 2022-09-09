@@ -1,12 +1,25 @@
-<div>
+<div class='albums'>
 
-  <div>
+  {{#each albums}}
+    <div class='album_container'>
+      {{! handlebars you access array with  . notation }}
+      <img src='{{images.0.url}}' alt='' />
 
-    {{!-- <img src='{{images}}' alt='' /> --}}
-    <h2>{{album.name}}</h2>
-    <img src='{{images.url}}' alt='' />
-    <a href='/albums/{{total_tracks}}'>View Tracks</a>
+      <h3>{{name}}</h3>
+      <button> <a href='/tracks/{{id}}'>Tracklist</a></button>
 
-  </div>
+    </div>
+
+  {{/each}}
 
 </div>
+
+{{!-- const myArtistsArray = [ { artistName: data.body.artists.items[0].name,
+artistImage: data.body.artists.items[0].images[0].url }, artistId:
+data.body.artist.items[0].id] #each myArtistsArray
+
+{{artistName}} --}}
+
+{{! const myArtistArray = itemsArray.map(element =>{ return { artistName:
+element.name, artistImage: element.images[0].url, artistId: element.id } }) then
+render }}

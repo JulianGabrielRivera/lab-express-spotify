@@ -1,10 +1,13 @@
-<div>
+<div class='artist_name'>
   {{#each artist}}
-    <div>
 
-      {{!-- <img src='{{images}}' alt='' /> --}}
+    {{! handlebars you access array with  . notation }}
+    <div class='container'>
+      <img src='{{images.0.url}}' alt='artists' />
+
       <h2>{{name}}</h2>
-      <a href='/albums/{{id}}'>View Albums</a>
+      <button>
+        <a href='/albums/{{id}}'>View Albums</a></button>
 
     </div>
 
